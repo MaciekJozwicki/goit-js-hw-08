@@ -27,4 +27,3 @@ galleryTEST.on('show.simplelightbox', function () {
 
 
 
-console.log(galleryItems, galleryEl);
