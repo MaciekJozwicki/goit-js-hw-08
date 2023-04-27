@@ -28,12 +28,3 @@ const submit = (e) => {
 formEl.addEventListener("input", throttle(getData, 500))
 buttonEl.addEventListener("click", submit)
 
-
-let dataEl = JSON.parse(localStorage.getItem('feedback-form-state')) ?? null;
-
-const getData = () => {
-    data.email = dataEl.email
-    data.message = dataEl.message
-    emailInputEl.value = data.email
-    messageInputEl = data.message
-}
