@@ -6,14 +6,6 @@ const emailInputEl = document.querySelector('input[type="email"]')
 const messageInputEl = document.querySelector('textarea[name="message"]')
 const buttonEl = document.querySelector('button[type="submit"]')
 
-// emailInputEl.addEventListener("input", (event) => {
-//         console.log(event.currentTarget.value)
-// })
-
-
-// messageInputEl.addEventListener("input", (event) => {
-//         console.log(event.currentTarget.value)
-// })
 
 const data = {
     email: '',
@@ -36,4 +28,12 @@ const submit = (e) => {
 formEl.addEventListener("input", throttle(getData, 500))
 buttonEl.addEventListener("click", submit)
 
-emailInputEl.textContent = localStorage.getItem('feedback-form-state.email')
+
+let dataEl = JSON.parse(localStorage.getItem('feedback-form-state')) ?? null;
+
+const getData = () => {
+    data.email = dataEl.email
+    data.message = dataEl.message
+    emailInputEl.value = data.email
+    messageInputEl = data.message
+}

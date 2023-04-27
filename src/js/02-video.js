@@ -21,3 +21,4 @@ player.on('timeupdate', throttle(data => {
 
 
 player.setCurrentTime(localStorage.getItem("videoplayer-current-time"))
+
